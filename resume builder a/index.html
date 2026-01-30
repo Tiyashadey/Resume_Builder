@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+<div class="container">
+    <h2>Resume Builder</h2>
+   
+    <!-- Personal Information -->
+   <div class="name1">
+    <div><label>Full Name</label>
+    <input type="text" id="name" placeholder="John Doe">
+</div>
+<div>
+     <label>Designation</label>
+    <input type="text" id="dsg" placeholder="Software Engineer, Full Stack Developer">
+</div>
+   
+   </div>
+    <label>Email</label>
+    <input type="email" id="email" placeholder="john@example.com">
+
+    <label>Profile Summary</label>
+    <textarea name="Summary" id="summary" placeholder="write profile summary here "></textarea>
+
+    <label>Phone Number</label>
+    <input type="text" id="phone" placeholder="+1 234 567 8900">
+ 
+    <label>Skills (Comma separated)</label>
+    <input type="text" id="skills" placeholder="JavaScript, Python, React, Node.js, SQL">
+
+    <div class="section-divider"></div>
+ 
+    <!-- Work Experience Section -->
+    <div id="experience-container">
+        <h3>Project </h3>
+        <div class="exp-block">
+            <input type="text" class="job-title" placeholder="Job Title">
+            <input type="text" class="company" placeholder="Company Name">
+            <div class="date-row">
+                <input type="text" class="start-date" placeholder="Start Date (e.g. Jan 2020)">
+                <input type="text" class="end-date" placeholder="End Date (e.g. Dec 2022 or Present)">
+            </div>
+            <textarea class="job-desc" placeholder="Describe your responsibilities and achievements..."></textarea>
+        </div>
+    </div>
+    <button type="button" class="btn btn-add" onclick="addExperience()">+ Add More Experience</button>
+
+    <div class="section-divider"></div>
+
+    <!-- Education Section -->
+    <div id="education-container">
+        <h3>Education</h3>
+        <div class="edu-block">
+            <input type="text" class="degree" placeholder="Degree / Qualification">
+            <input type="text" class="school" placeholder="School / University">
+            <input type="text" class="edu-year" placeholder="Year (e.g. 2018-2022)">
+        </div>
+    </div>
+    <button type="button" class="btn btn-add" onclick="addEducation()">+ Add More Education</button>
+
+    <div class="section-divider"></div>
+
+    <!-- Certification Section -->
+    <div id="certification-container">
+        <h3>Certifications</h3>
+        <div class="cert-block">
+            <input type="text" class="cert-name" placeholder="Certification Name">
+            <input type="text" class="cert-issuer" placeholder="Issuing Organization">
+            <input type="text" class="cert-year" placeholder="Year Obtained">
+        </div>
+    </div>
+    <button type="button" class="btn btn-add" onclick="addCertification()">+ Add More Certification</button>
+
+    <div class="section-divider"></div>
+   
+    <!-- Action Buttons -->
+    <button type="button" class="btn btn-pdf" onclick="generateResume()">📄 Download PDF Resume</button>
+    <button type="button" class="btn btn-clear" onclick="clearData()">🗑️ Clear All Data</button>
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
+
